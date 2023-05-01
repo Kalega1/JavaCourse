@@ -12,7 +12,7 @@ public class dz1 {
 
 public static String findJewelsInStones(String jewels, String stones) {
     StringBuilder sb = new StringBuilder();
-    int[] freq = new int[58]; // frequency array to store the occurrence of each character
+    int[] freq = new int[58]; 
     for(char c : stones.toCharArray()) {
     freq[c-'A']++;
     }
