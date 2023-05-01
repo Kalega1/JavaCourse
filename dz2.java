@@ -1,40 +1,25 @@
-import java.util.Scanner;
+
 
 public class dz2 {
-        public static void main(String[] args) {
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Введите число:  ");
-            Double num1 = sc.nextDouble();
-            System.out.println("Введите знак действия: ");
-            char des = sc.next().charAt(0);
-            System.out.println("Введите число:  ");
-            Double num2 = sc.nextDouble();
 
-            double result = 0;
+    public static void main(String[] args) {
 
-            switch (des) 
-            {
-                case '+':
-                    result = num1 + num2;
-                    break;
-                
-            
-                case '*':
-                    result = num1 * num2;
-                    break;
-                
-                case '/':
-                    result = num1 * num2;
-                    break;
-                
-                case '-':
-                    result = num1 - num2;
-                    break;
-                default:
-                    System.out.println("вы ввели неверное действие");
-            }
+        String s = "cba";
+        int[] index = new int[] { 3, 2, 1 };
+        String result = shuffle(s, index);
+        System.out.println(result); 
+    }
 
-            System.out.println(num1 + "" + des + "" + num2 + "=" + result);
+    public static String shuffle(final String s, final int[] index) {
+        char[] shuffled = new char[s.length()];
 
+        for (int i = 0; i < s.length(); i++) {
+            shuffled[index[i]] = s.charAt(i);
         }
+
+        return new String(shuffled);
+    }
+    
 }
+
+

@@ -4,19 +4,22 @@ import java.util.Scanner;
 public class dz1 {
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a positive integer n: ");
-        int n = scanner.nextInt();
-        
-        int triangleNumber = 0;
-        int factorial = 1;
-
-        for (int i = 1; i <= n; i++) {
-            triangleNumber += i;
-            factorial *= i;
-        }
-
-        System.out.println("The " + n + "-th triangle number is " + triangleNumber);
-        System.out.println("The factorial of " + n + " is " + factorial);
+        String jewels = "aB";
+        String stones = "aaaAbbbB";
+        String result = findJewelsInStones(jewels, stones);
+        System.out.println(result);   
     }
+
+public static String findJewelsInStones(String jewels, String stones) {
+    StringBuilder sb = new StringBuilder();
+    int[] freq = new int[58]; // frequency array to store the occurrence of each character
+    for(char c : stones.toCharArray()) {
+    freq[c-'A']++;
+    }
+    for(char c : jewels.toCharArray()) {
+        sb.append(c);
+        sb.append(freq[c-'A']);
+    }
+    return sb.toString();
+}
 }
